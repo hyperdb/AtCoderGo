@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"sort"
 )
 
@@ -12,13 +13,9 @@ func main() {
 
 	sort.SliceStable(n, func(i, j int) bool { return n[i] < n[j] })
 
-	sum := 0
-	for _, x := range n {
-		sum += x
-	}
-
+	t := []int{5, 5, 7}
 	r := "NO"
-	if sum == 17 && n[0] == 5 && n[1] == 5 {
+	if reflect.DeepEqual(n, t) {
 		r = "YES"
 	}
 	fmt.Println(r)
