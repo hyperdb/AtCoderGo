@@ -29,7 +29,18 @@ go build -o [project].exe
 - リクエストをマージ（コメントにレビュー結果）
 - レビュー用のブランチを削除
 
+ブランチを作成して移動
+変更分をリモートブランチにプッシュ
+
 ```bash
 git checkout -b [branch_name]
 git push -u origin [branch_name]
+```
+
+Web側でプルリクエストを作成してマージ
+ローカルブランチを削除
+
+```bash
+git checkout main
+git branch -d [branch_name]
 ```
