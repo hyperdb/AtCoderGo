@@ -7,20 +7,23 @@ import (
 )
 
 func main() {
-	n := 0
-	l := 0
-
+	var n, l int
 	fmt.Scan(&n, &l)
 
-	s := make([]string, l, n)
+	// n個の文字列を格納するスライスを作成
+	s := make([]string, n)
 
+	// 文字列を入力
 	for i := 0; i < n; i++ {
 		fmt.Scan(&s[i])
 	}
 
-	sort.SliceStable(s, func(i, j int) bool { return s[i] < s[j] })
+	// 辞書順にソート
+	sort.Strings(s)
 
-	r := strings.Join(s, "")
+	// すべての文字列を連結
+	result := strings.Join(s, "")
 
-	fmt.Println(r)
+	// 結果を出力
+	fmt.Println(result)
 }

@@ -18,24 +18,24 @@ func main() {
 
 	// n以上の数値をチェックする
 	for c := n; c <= 100000; c++ {
-		// 数値に含まれる文字を取得
 		chars := strings.Split(fmt.Sprintf("%d", c), "")
-		errors := 0
+		found := false // 禁止数字が見つかったかどうかのフラグ
+
 		// 各文字がDに含まれているかチェック
-		// 含まれていればエラーとする
-		for i := range chars {
-			for j := range D {
-				if chars[i] == D[j] {
-					errors++
+		for _, ch := range chars {
+			for _, d := range D {
+				if ch == d {
+					found = true
 					break
 				}
 			}
+			if found {
+				break // 1つでも禁止数字があれば次の数値へ
+			}
 		}
-		// エラーがなければ出力
-		// それ以外は次の数値をチェック
-		if errors > 0 {
-			continue
-		} else {
+
+		// 禁止数字が含まれていなければ出力して終了
+		if !found {
 			fmt.Println(c)
 			break
 		}
