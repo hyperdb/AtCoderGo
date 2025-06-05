@@ -5,8 +5,9 @@ import (
 )
 
 func main() {
-	N := 0
-	fmt.Scan(&N)
+	var N int
+	fmt.Scan(&N) // Nを入力
 
-	fmt.Println(int(((N + 1) * N) / 2))
+	// 1からNまでの和を公式で計算して出力
+	fmt.Println((N + 1) * N / 2)
 }
