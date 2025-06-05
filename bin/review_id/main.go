@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 	"time"
 )
@@ -31,10 +32,7 @@ func toBase62(num int64) string {
 }
 
 func main() {
-
 	unixTime := time.Now().Unix()
-
 	base62Name := toBase62(unixTime)
-
-	println("review-" + base62Name) // 例: "1z0" などのbase62文字列が出力される
+	fmt.Println("review-" + base62Name) // 例: "review-1z0" などのbase62文字列が出力される
 }
