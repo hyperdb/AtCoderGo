@@ -14,11 +14,12 @@ func getIntList(N int) []int {
 }
 
 func getCost(data []int, average int) int {
-	cost := 0.0
+	cost := 0
 	for i := 0; i < len(data); i++ {
-		cost += math.Pow(float64(data[i]-average), 2.0) // 平均からの偏差の二乗を計算
+		diff := data[i] - average
+		cost += diff * diff // 偏差の二乗を加算
 	}
-	return int(cost)
+	return cost
 }
 
 func main() {
