@@ -1,14 +1,31 @@
 # AtCoder for Go
 
+AtCoderの過去問題をGo言語で解答するためのリポジトリです。
+
 ## プロジェクトの作り方
 
+- 解答の作成は`workspace`ディレクトリで行います。
+- `main.go`に解答を作成します。
+    - すでにソースが記入済みの場合はクリアしてください。
+- テストがOKなら提出します。
+- `mv.py`スクリプトを使って提出済みのソースをコピーします。
+- 提出済みのソースを修正する場合は`cp.py`スクリプトを使って`main.go`にコピーします。
+
+### mv.py
+
 ```bash
-mkdir [project]
-cd [project]
-go mod init [project]
-go run main.go
-go build -o [project].exe
+python mv.py [category] [sequence] [level]
 ```
+
+例）`python mv.py ABC 142 A` → `main.go`を`/ABC/101-200/141-150/ABC-142-A.go`にコピー
+
+### cp.py
+
+```bash
+python cp.py [category] [sequence] [level]
+```
+
+例）`python mv.py ABC 142 A` → `/ABC/101-200/141-150/ABC-142-A.go`を`main.go`にコピー
 
 ## ソース管理
 
